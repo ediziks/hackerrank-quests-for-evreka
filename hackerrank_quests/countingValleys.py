@@ -14,7 +14,9 @@ for step in ls:
 		level = 1
 	if level > 0 and att > 0:
 		att2 = 1
-	if att2 == 1 and att < 0:
+	else:
+		att2 == 0
+	if att2 > 0 and att < 0:
 		level += 1
 		
 
