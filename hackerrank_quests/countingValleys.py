@@ -1,24 +1,36 @@
-n = 0
-s = 'UDDDUDUU'
+#!/bin/python3
 
-ls = [s[i] for i in range(len(s))]
+import math
+import os
+import random
+import re
+import sys
 
-att, level = 0, 0
+# Complete the countingValleys function below.
+def countingValleys(n, s):
+    ls = [s[i] for i in range(len(s))]
 
-for step in range(len(ls)):
-	if ls[att:step+1].count('D') + ls[att:step+1].count('U') == 0:
-		att = step
-		if ls[att:step+1].count('D') > ls[att:step+1].count('U'):
-			level += 1 
+    valley, level = 0, 0
 
-	# if att < 0:
-	# 	level += 1
-	# if level > 0 and att > 0:
-	# 	att2 = 1
-	# else:
-	# 	att2 == 0
-	# if att2 > 0 and att < 0:
-	# 	level += 1
-		
+    for step in ls:
+        if step == 'U':
+            level += 1
+            if level == 0:
+                valley += 1
+        else:
+            level -= 1        
 
-print(level)
+    return valley
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    s = input()
+
+    result = countingValleys(n, s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
