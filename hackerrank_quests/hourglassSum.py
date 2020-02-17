@@ -7,13 +7,13 @@ import re
 import sys
 
 # Complete the hourglassSum function below.
-def hourglassSum(arr):    
-    result = [] 
+def hourglassSum(arr):
+    result = []
     for i in range(6):
         for j in range(6):
             try:
-                hGlass = arr[i][j] + arr[i][j+1] + arr[i][j+2] 
-                hGlass += arr[i+1][j+1] 
+                hGlass = arr[i][j] + arr[i][j+1] + arr[i][j+2]
+                hGlass += arr[i+1][j+1]
                 hGlass += arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
                 result.append(hGlass)
             except:
