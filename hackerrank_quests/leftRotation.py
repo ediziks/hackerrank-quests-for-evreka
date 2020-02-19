@@ -19,3 +19,4 @@ if __name__ == '__main__':
     d = d % len(a) if d > len(a) else d
 
     print(*(a[d:] + a[:d]))
+    
