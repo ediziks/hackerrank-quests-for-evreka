@@ -4,9 +4,8 @@ import os
 import sys
 import heapq as h
 
-#
+
 # Complete the cookies function below.
-#
 def cookies(k, A):
     # Write your code here.
     h.heapify(A)
